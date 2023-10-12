@@ -17,7 +17,7 @@ app.get('/', (req, res)=> {
 app.get('/timenow', (req, res)=>{
     const dateNow = dateInfo.dateNowET(); 
     const timeNow = dateInfo.timeNowET(); 
-    res.render('timenow',{dateN: dateNow, timeN: timeNow});
+    res.render('timenow',{h1: "Praegune hetk", dateN: dateNow, timeN: timeNow});
 });
 
 app.get('/wisdom', (req, res)=> {
