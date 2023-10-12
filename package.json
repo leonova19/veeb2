@@ -1,0 +1,30 @@
+{
+  "name": "vp2023",
+  "version": "1.0.0",
+  "description": "Veebipriframmerimine kursuse loodud veeb ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://leonova19@github.com/leonova19/veeb2.git"
+  },
+  "keywords": [
+    "veebiprogrammerimine",
+    "NoodeJs",
+    "Express.Js",
+    "Tallinna",
+    "Ülikool"
+  ],
+  "author": "Eliana Leonova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonova19/veeb2/issues"
+  },
+  "homepage": "https://github.com/leonova19/veeb2#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
