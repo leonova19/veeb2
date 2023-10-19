@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eliana Loenova, veebiprogrammeerimine 2023</title>
+	<script src="first.js" defer></script>
+</head>
+<body>
+	<img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png"
+		alt="veebiprogrammeerimise kursuse banner" />
+        <h1>Eesti film</h1>
+  
+	<ul>
+		<li><a href= "/eestifilm">Eesti filmide avaleht</a></li>
+        <li><a href= "/">Avalehele</a></li>
+	</ul>
+	<hr>
+    <h2>Lisa naitleja</h2>
+    <form method ="POST">
+        <label for = "firstNameInput">Filmi tegelase eesnimi</label>
+        <input type="text" name="firstNameInput" id="firstNameInput" placeholder="Eesnimi..." required>
+        <br>
+        <label for = "lastNameInput">Filmi tegelase perekonnanimi</label>
+        <input type="text" name="lastNameInput" id= "lastNameInput" placeholder="Perekonnanimi..."required>
+        <br>
+        <label for="birthDateInput">Sünniaeg: </label>
+        <input type="date" name="birthDateInput" id="birthDateInput" required>
+        <br>
+        <input type="submit" name="personSubmit" value="Salvesta">
+     </form>
+    <p><%= locals.notice %></p>
+
+</body>
+</html>

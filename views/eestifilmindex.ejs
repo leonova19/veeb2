@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eliana Loenova, veebiprogrammeerimine 2023</title>
+	<script src="first.js" defer></script>
+</head>
+<body>
+	<img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png"
+		alt="veebiprogrammeerimise kursuse banner" />
+        <h1>Eesti film</h1>
+  
+	<ul>
+		<li><a href= "/eestifilm/">Avalehele</a></li>
+        <li><a href= "/">Avalehele</a></li>
+	</ul>
+	<hr>
+    <h2>Andmebaasis olevad filmid</h2>
+	<ol>
+		<% filmlist.forEach (function(film)) { %>
+			<li><%= locals.film.title %>, toodetud: <%= locals.film.production_year %></li>
+		<% }); %>
+	</ol>
+</body>
+</html>
