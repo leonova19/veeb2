@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const dateInfo= require("./dateTime_et");
 const fs = require('fs')
-const dbConfig = require('/vp23config');
-const database = 'if23_eliana_leonova';
+const dbConfig = require('../../vp23config/vp23config');
+const database = 'if23_eliana';
 const mysql = require('mysql2');
 const bodyparser = require('body-parser');
 //lisame failisüsteemi moodul 
@@ -19,7 +19,7 @@ const conn = mysql.createConnection({
     host: dbConfig.configData.host,
     user: dbConfig.configData.user,
     password: dbConfig.configData.password,
-    database: dateBase
+    database: database
 });
 
 
@@ -50,7 +50,6 @@ app.get('/wisdom', (req, res)=> {
 }); 
 
 app.get('/eestifilm', (req, res)=> {
-    //res.ssend('See töötab!');
     res.render('eestifilmindex');
 }); 
 
@@ -61,31 +60,70 @@ app.get('/eestifilm/filmiloend', (req, res)=> {
     conn.query(sql, (err, result) => {
         if (err) {
             throw err;
-            res.render('eestifilmlist',  {filmlist: sqlresult});
+            res.render('eestifilmilist',  {filmlist: sqlresult});
         }
         else { 
             //console.log(result);
             //console.log(result[4].title);
             sqlresult = result;
             //console.log(sqlresult);
-            res.render('eestifilmlist', {filmlist: sqlresult});
+            res.render('eestifilmilist', {filmlist: sqlresult});
         }
     });
    // res.render('eestifilmlist',  {filmlist: sqlresult});
 }); 
 
+app.get('/news', (reg,res)=>{
+    res.render('news');
+});
+
+app.get('/news/add', (reg,res)=>{
+    res.render('addnews');
+});
+
+app.get('/news/read', (reg,res)=>{
+    res.render('readnews');
+});
+
+app.get('/news/read/:id', (reg,res)=>{
+    //res.render('readnews');
+    console.log(req.params);
+    console.log(req.query);
+    res.send('Vaatame uudis, mille id on: ' + req.params.id)
+});
+
+
 app.get('/eestifilm/lisaperson', (req, res)=> {
     //res.ssend('See töötab!');
-    res.render('eestifilmaddperson');
+    res.render('eestifilmaddperson', {notice:''});
 }); 
 
-app.post ('/eestifilm/lisaperson', (req, res)=> {
-    console.log(req.body);
+app.get('/eestifilm/tegelased', (req, res)=> {
+    let sql = 'select first_name, last_name, birth_date from person';
+    let sqlresult = [];
+    conn.query(sql, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        else { 
+            //console.log(result);
+            //console.log(result[4].title);
+            sqlresult = result;
+            //console.log(sqlresult);
+            res.render('tegelased', {tegelased:result});
+        }
+    });
+}); 
+
+
+
+
+app.post ('/eestifilm/lisaperson', (req, res)=> {l
     let notice = '';
     let sql = 'INSERT INTO person (first_name, last_name, birth_date) VALUES (?,?,?)'; 
-    conn.query(sql, [req.body.firstNameInput, req.body.lastNameInput, req.body.birthDateInput], (err, result=> {
+    conn.query(sql, [req.body.firstNameInput, req.body.lastNameInput, req.body.birthDateInput], (err, result) => {
         if(err) {
-            throw err;
+            console.log('err', err)
             notice = 'Andmete salvestamine ebaõnnestus!' + err;
             res.render('eestifilmaddperson', {notice: notice});
         }
@@ -94,7 +132,7 @@ app.post ('/eestifilm/lisaperson', (req, res)=> {
             res.render('eestifilmaddperson', {notice: notice});
 
         }
-    }));
+    });
 }); 
 
 app.listen(5213);

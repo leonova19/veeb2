@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eliana Loenova, veebiprogrammeerimine 2023</title>
+	<script src="first.js" defer></script>
+</head>
+<body>
+    <img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png"
+		alt="veebiprogrammeerimise kursuse banner" />
+        <h1>Uudised</h1>
+    <ul>
+        <li><a href= "/news">Uudiste avaleht</a></li>
+        <li><a href= "/">Avalehele</a></li>
+	</ul>
+	<hr>
+    <h2>Uudise lisamine</h2>
+    <form method ="POST">
+        <label for = "titleInput">Uudise pealkiri</label>
+        <input type="text" name="titleInput" id="titleInput" placeholder="Uudise pealkiri..." required>
+        <br>
+        <label for = "contentInput">Uudise sisu</label>
+        <br>
+        <textarea name="contentInput" id="contentInput" cols="80" rows="5" placeholder="Uudise tekst..."
+        required maxlenght="2000"></textarea>
+        <br>
+        <label for="expirehDateInput">Aegumistähtaeg: </label>
+        <input type="date" name="expirehDateInput" id="expirehDateInput" required>
+        <br>
+        <input type="submit" name="newsSubmit" value="Salvesta">
+     </form>
+</body>
+</html> 

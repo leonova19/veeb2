@@ -9,18 +9,18 @@
 
 <body>
   <img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png" alt="veebiprogrammeerimise kursuse banner" />
-  <h1>Eesti film</h1>
+  <h1>Eesti tegelased</h1>
 
   <ul>
     <li><a href="/eestifilm/">Tagasi</a></li>
     <li><a href="/">Avalehele</a></li>
   </ul>
   <hr>
-  <h2>Andmebaasis olevad filmid</h2>
+  <h2>Andmebaasis olevad tegelased</h2>
   <ol>
-    <% filmlist.forEach (function(film) { %>
+    <% tegelased.forEach (function(tegelane) { %>
     <li>
-      <%= film.title %>, toodetud: <%= film.production_year %>
+      <%= tegelane.first_name %> <%= tegelane.last_name %>, sünniaasta: <%= new Date(tegelane.birth_date).getFullYear() %>
     </li>
     <% }); %>
   </ol>
