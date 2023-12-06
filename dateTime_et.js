@@ -1,7 +1,7 @@
 const monthNamesET = ["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"];
 
-const dateNowET = function(){
-	let timeNow = new Date();
+const dateNowET = function(date){
+	let timeNow = new Date(date);
 	//return timeNow.getDate() + "." + (timeNow.getMonth() + 1) + "." + timeNow.getFullYear();
 	return timeNow.getDate() + ". " + monthNamesET[timeNow.getMonth()] + " " + timeNow.getFullYear();
 }

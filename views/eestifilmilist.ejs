@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png" alt="veebiprogrammeerimise kursuse banner" />
+  <img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png"
+    alt="veebiprogrammeerimise kursuse banner" />
   <h1>Eesti film</h1>
 
   <ul>
@@ -19,10 +20,12 @@
   <h2>Andmebaasis olevad filmid</h2>
   <ol>
     <% filmlist.forEach (function(film) { %>
-    <li>
-      <%= film.title %>, toodetud: <%= film.production_year %>
-    </li>
-    <% }); %>
+      <li>
+        <a href="/eestifilm/filmiloend/<%= film.id %>">
+          <%= film.title %>, toodetud: <%= film.production_year %>
+        </a>
+      </li>
+      <% }); %>
   </ol>
 </body>
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eliana Loenova, veebiprogrammeerimine 2023</title>
+</head>
+
+<body>
+    <img src="http://localhost:49895/~rinde/media/pics/banner/vp_banner_2023.png"
+        alt="veebiprogrammeerimise kursuse banner" />
+    <h1>Eesti film</h1>
+    <ul>
+        <li><a href="/eestifilm">Eesti film kategooria</a></li>
+        <li><a href="/eestifilm/filmiloend">Andmebaasis olevad filmid</a></li>
+        <li><a href="/">Avalehele</a></li>
+    </ul>
+    <hr>
+
+    <h3><%= filmiloend.title %></h3>
+    <p>Aasta: <%= filmiloend.production_year %></p>
+    <p>Pikkus:<%= filmiloend.duration %></p>
+    <p>Kirjeldus:<%= filmiloend.description %></p>
+
+</body>
+
+</html>

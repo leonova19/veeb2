@@ -16,19 +16,18 @@
 	</ul>
 	<hr>
     <h2>Lisa naitleja</h2>
-    <form method ="POST">
-        <label for = "firstNameInput">Filmi tegelase eesnimi</label>
-        <input type="text" name="firstNameInput" id="firstNameInput" placeholder="Eesnimi..." required>
-        <br>
-        <label for = "lastNameInput">Filmi tegelase perekonnanimi</label>
-        <input type="text" name="lastNameInput" id= "lastNameInput" placeholder="Perekonnanimi..."required>
-        <br>
-        <label for="birthDateInput">Sünniaeg: </label>
-        <input type="date" name="birthDateInput" id="birthDateInput" required>
-        <br>
-        <input type="submit" name="personSubmit" value="Salvesta">
-     </form>
-    <p><%= notice %></p>
-
+    <form method="POST">
+		<label for="firstNameInput">Filmitegelase eesnimi</label>
+		<input type="text" name="firstNameInput" id="firstNameInput" placeholder="Eesnimi ..." required />
+		<br>
+		<label for="lastNameInput">Filmitegelase perekonnanimi</label>
+		<input type="text" name="lastNameInput" id="lastNameInput" placeholder="Perekonnanimi ..." required>
+		<br>
+		<label for="birthDateInput">Sünniaeg: </label>
+		<input type="date" name="birthDateInput" id="birthDateInput" required>
+		<br>
+		<input type="submit" name="personSubmit" value="Salvesta">
+	</form>
+	<p><%= locals.notice %></p>
 </body>
 </html>
